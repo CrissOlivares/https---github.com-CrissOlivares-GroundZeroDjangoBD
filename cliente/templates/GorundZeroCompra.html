@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./static/css/GroundZero.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroundZero</title>
+    <link rel="stylesheet" href="./static/css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/color.css">
+    <link href="./static/css/css/bootstrap.min.css" rel="stylesheet">
+    <script src="./static/js/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="background-color:#EEEDEC;">
+<!-- inicio de compra -->
+<section class="h-100 h-custom" style="background-color: #6b6868;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+  
+              <div class="row">
+  
+                <div class="col-lg-7">
+                  <h5 class="mb-3"><a href="{% url 'GroundZeroInicio.html'%}" class="text-body"><i
+                        class="fas fa-long-arrow-alt-left me-2"></i>Seguir comprando</a></h5>
+                  <hr>
+                  <div class="d-flex justify-content-between align-items-center mb-4">
+                    <div>
+                      <p class="mb-1">Carro de la compra</p>
+                      <p class="mb-0">Tienes 1 artículos en tu carrito</p>
+                    </div>
+                    <div>
+                      <p class="mb-0"><span class="text-muted">Ordenar por:
+                      </span> <a href="#!"
+                          class="text-body">precio <i class="fas fa-angle-down mt-1"></i></a></p>
+                    </div>
+                  </div>
+  
+                  <div class="card mb-3">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex flex-row align-items-center">
+                          <div>
+                            <img
+                              src="./static/img/imagenes/12.jpg"
+                              class="img-fluid rounded-3" alt="imagen no encontrada" style="width: 85px;">
+                          </div>
+                          <div class="ms-3">
+                            <h5>La noche estrellada, de Vincent Van Gogh</h5>
+                            <p class="small mb-0">51 x 40 cm.</p>
+                          </div>
+                        </div>
+                        <div class="d-flex flex-row align-items-center">
+                          <div style="width: 50px;">
+                            <h5 class="fw-normal mb-0">1</h5>
+                          </div>
+                          <div style="width: 80px;">
+                            <h5 class="mb-0">$900</h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-5">
+  
+                  <div class="card bg-primary text-white rounded-3">
+                    <div class="card-body">
+                      <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h5 class="mb-0">Detalles de tarjeta</h5>
+                      </div>
+  
+                    <!-- Inicio del formulario -->
+                    <div class="container">
+                      <h1 class="mt-5">Formulario de Pago</h1>
+                      <form class="needs-validation" method="post" novalidate onsubmit="return validateForm()">
+                          {% csrf_token %}
+                          <div class="form-group">
+                              <label for="{{ form.nombre_titular.id_for_label }}">Nombre de Titular</label>
+                              {{ form.nombre_titular }}
+                              <div class="invalid-feedback">
+                                  {% for error in form.nombre_titular.errors %}
+                                  {{ error }}
+                                  {% endfor %}
+                              </div>
+                          </div>
+                          <div class="form-group">
+                              <label for="{{ form.numero_tarjeta.id_for_label }}">Número de Tarjeta</label>
+                              {{ form.numero_tarjeta }}
+                              <div class="invalid-feedback">
+                                  {% for error in form.numero_tarjeta.errors %}
+                                  {{ error }}
+                                  {% endfor %}
+                              </div>
+                          </div>
+                          <div class="form-row">
+                              <div class="form-group col-md-6">
+                                  <label for="{{ form.fecha_vencimiento.id_for_label }}">Fecha de Vencimiento (MM/YY)</label>
+                                  {{ form.fecha_vencimiento }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.fecha_vencimiento.errors %}
+                                      {{ error }}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <label for="{{ form.cvv.id_for_label }}">CVV</label>
+                                  {{ form.cvv }}
+                                  <div class="invalid-feedback">
+                                      {% for error in form.cvv.errors %}
+                                      {{ error }}
+                                      {% endfor %}
+                                  </div>
+                              </div>
+                          </div>
+                          <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal" style="text-align:right">
+                            Guardar datos 
+                          </button>
+                          <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="exampleModalLabel" style="color: black;">Guardar Tarjeta</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body" style="color: black;">
+                                  <p>Desea guardar los datos de la tarjeta para cuando compre de nuevo sea mas facil.</p>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" >Guardar</button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                      </form>
+                    </div>
+                    <!-- Fin del formulario -->
+
+                    <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                      let numeroTarjeta = document.querySelector('#id_numero_tarjeta');
+
+                      numeroTarjeta.addEventListener('input', function(e) {
+                          let value = e.target.value.replace(/\s+/g, '');  // Elimina todos los espacios
+                          let formattedValue = value.match(/.{1,4}/g)?.join(' ') || '';  // Añade un espacio cada 4 caracteres
+                          e.target.value = formattedValue;
+                      });
+
+                      function validateForm() {
+                          let nombreTitular = document.querySelector('#id_nombre_titular');
+                          let numeroTarjeta = document.querySelector('#id_numero_tarjeta');
+                          let fechaVencimiento = document.querySelector('#id_fecha_vencimiento');
+                          let cvv = document.querySelector('#id_cvv');
+                          
+                          let nombreRegex = /^[a-zA-Z\s]*$/;
+                          let numeroTarjetaRegex = /^\d{4}\s\d{4}\s\d{4}\s\d{4}$/;
+                          let fechaVencimientoRegex = /^\d{2}\/\d{2}$/;
+                          let cvvRegex = /^\d{3}$/;
+                          
+                          if (!nombreRegex.test(nombreTitular.value)) {
+                              nombreTitular.setCustomValidity('El nombre del titular no debe contener números.');
+                              nombreTitular.reportValidity();
+                              return false;
+                          } else {
+                              nombreTitular.setCustomValidity('');
+                          }
+                          
+                          if (!numeroTarjetaRegex.test(numeroTarjeta.value)) {
+                              numeroTarjeta.setCustomValidity('El número de tarjeta debe contener 16 dígitos en formato 1234 1234 1234 1234.');
+                              numeroTarjeta.reportValidity();
+                              return false;
+                          } else {
+                              numeroTarjeta.setCustomValidity('');
+                          }
+                          
+                          if (!fechaVencimientoRegex.test(fechaVencimiento.value)) {
+                              fechaVencimiento.setCustomValidity('La fecha de vencimiento debe tener el formato MM/YY.');
+                              fechaVencimiento.reportValidity();
+                              return false;
+                          } else {
+                              fechaVencimiento.setCustomValidity('');
+                          }
+                          
+                          if (!cvvRegex.test(cvv.value)) {
+                              cvv.setCustomValidity('El CVV debe contener 3 dígitos.');
+                              cvv.reportValidity();
+                              return false;
+                          } else {
+                              cvv.setCustomValidity('');
+                          }
+                          
+                          return true;
+                      }
+                    });
+                    </script>
+
+
+                      <hr class="my-4">
+  
+                      <div class="d-flex justify-content-between">
+                        <p class="mb-2">Subtotal</p>
+                        <p class="mb-2">$900</p>
+                      </div>
+                      
+                      <!-- botones con javascrip -->
+
+                      <div class="d-flex justify-content-between">
+                        <p id="textoMostrado1" class="mb-2"></p>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <p id="textoMostrado2" class="mb-2"></p>
+                      </div>
+                      <button id="boton1" class="boton">Envío</button>
+                      <button id="boton2" class="boton">Retirar en tienda</button>
+                      <!-- Botón para ver datos guardados -->
+                      <div class="mt-4">
+                        <a href="lista_tarjetas.html" class="btn btn-primary">Ver Datos Guardados</a>
+                      </div>
+                      
+
+                      <!-- final btn -->
+                </div>
+                <button id="botonPago" type="button" class="btn btn-warning" style="text-align:center">Pagar = $</button>
+                <script src="./static/js/btn.js"></script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- fin de compra -->
+   <!-- inicio del footer -->
+   <footer>
+    <div class="container-fluid" style="background-color: #AEB6BF;">
+      <div class="row">
+        <div class="col-4" style="margin-top: 20px;">
+          <h5>¿En qué te podemos ayudar?</h5>
+          <hr>
+          <ul class="ul-no-bullet">
+            <li>
+              Informaciones
+            </li>
+            <li>
+              preguntas frecuentes
+            </li>
+            <li>
+              Referencias
+            </li>
+          </ul>
+        </div>
+        <div class="col-4"style="margin-top: 20px;">
+          <h5>Siguenos en nuestras redes sociales</h5>
+          <hr>
+          <ul class="ul-no-bullet">
+            <li>
+              X (Antes Twitter) <a href=""><img src="./static/img/imagenes/twitter-x.svg" alt=""></a>
+            </li>
+            <li>
+              Instagram <a href=""><img src="./static/img/imagenes/instagram.svg" alt=""></a>
+            </li>
+            <li>
+              Whatsapp <a href=""><img src="./static/img/imagenes/whatsapp.svg" alt=""></a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-4"style="margin-top: 20px;">
+          <h5>¿En qué te podemos ayudar?</h5>
+          <hr>
+          <ul class="ul-no-bullet">
+            <li>
+              Informaciones
+            </li>
+            <li>
+              preguntas frecuentes
+            </li>
+            <li>
+              Referencias
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- fin del footer -->
+  <script src="./static/js/js/bootstrap.bundle.min.js"></script>
+  <!-- javaScript code -->
+  <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
+</body>
+</html>

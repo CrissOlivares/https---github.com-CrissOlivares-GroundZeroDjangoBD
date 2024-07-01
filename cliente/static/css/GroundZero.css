@@ -1,0 +1,70 @@
+.divini{
+    font-family: sans-serif;
+    letter-spacing: 3px;
+    font-size: 18px;
+}
+.li-style{
+    padding-right: 10px;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right:10px ;
+}
+.li-style:hover{
+    background-color: #F1F1F1;
+    border-radius: 10px;
+}
+
+.im-margin{
+    margin:40px;
+    width:700px;
+}
+.p-1{
+    font-family: sans-serif;
+    font-size: 14px;
+    text-align: center;
+}
+.carru{
+    margin-left: 0px;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 70px;
+
+    
+}
+.h51{
+    font-family: sans-serif;
+    font-size: 33px;
+}
+.p2{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+.h1-2{
+    font-family: sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+.div.col{
+    padding: 20px;
+}
+/* .ul-principal{
+    background-color: #F1F1F1;
+    border-radius: 10px;
+} */
+.logo{
+    width: 100px;
+    padding-right: 30px;
+}
+/* .ul-no-bullet{
+    list-style-type: none;
+
+} */
+/* .hr1{
+    border-color: white;
+    
+    
+} */
+.aref{
+    text-decoration: none;
+    color: black;
+}

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'css/GroundZero.css' %}">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroundZero</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style="background-color:#EEEDEC;">
+<!-- inicio login -->
+<div class="container">
+    <h2>Ingreso</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <div class="policy">
+            <input type="checkbox" name="remember_me">
+            <h3>Guardar Datos</h3>
+        </div>
+        <div class="input-box button">
+            <button type="submit">Ingresar</button>
+        </div>
+        <div class="text">
+            <h3>No tienes cuenta? <a href="{% url 'GroundZeroRegister.html' %}">Registrate Aca</a></h3>
+        </div>
+    </form>
+</div>
+<!-- fin login -->
+<script src="cliente/static/js/js/bootstrap.bundle.min.js"></script>
+<!-- javaScript code -->
+<script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+        return new bootstrap.Popover(popoverTriggerEl)
+    })
+</script>
+</body>
+</html>

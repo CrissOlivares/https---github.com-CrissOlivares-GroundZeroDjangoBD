@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./static/css/GroundZero.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroundZero</title>
+    <link rel="stylesheet" href="./static/css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/paises.css">
+</head>
+<body>
+     <!-- inicio del nav -->
+     <nav class="navbar sticky-top navbar-expand-lg " style="background-color: #e0dedd;" >
+        <div class="container-fluid divini ">
+          <img class="logo" src="./static/img/imagenes/DefGroundZero.png">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            Menú<span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 ">
+              <li class="nav-item li-style ul-principal">
+                <a class="nav-link  active " aria-current="page" href="{% url 'GroundZeroInicio.html'%}">Inicio</a>
+              </li>
+              <li class="nav-item li-style">
+                <a class="nav-link active" aria-current="page" href="{% url 'GroundZeroArtistas.html'%}">Artistas</a>
+              </li>
+              <li class="nav-item dropdown li-style">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Categorias
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="{% url 'GroundZeroCuadros.html'%}">Cuadros</a></li>
+                  <li><a class="dropdown-item" href="{% url 'GroundZeroEsculturas.html'%}">Esculturas</a></li>
+                  <li><a class="dropdown-item" href="{% url 'GroundZeroOrfebreria.html'%}">Orfebreria</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="{% url 'GroundZeroInicio.html'%}">Trabajos mejor valorados</a></li>
+                </ul>
+              </li>
+              <form class="d-flex" role="search" style="margin-left: 30px;">
+                <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                <button class="btn btn-outline" type="submit"><img  src="./imagenes/search.svg"></button>
+              </form>
+              </ul>
+          </div>
+          <a class="btn btn-light" href="{% url 'GroundZeroLogin.html'%}" target="_blank" role="button" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 30px; --bs-btn-font-size: 12px; margin-right: 20px;font-family: sans-serif;">Login</a>
+          <a class="btn btn-secondary" href="{% url 'GroundZeroRegister.html'%}" target="_blank" role="button" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 15px; --bs-btn-font-size: 12px;margin-right: 20px;font-family: sans-serif;">Registrarse</a>   
+          <button type="button" class="btn" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="left" data-bs-content="Puedes comprar sin estar registrado">
+            <img src="./static/img/imagenes/info-circle.svg" alt="">
+          </button>
+          <a class="btn" href="{% url 'GorundZeroCompra.html'%}" role="button" style="--bs-btn-padding-y: 10px; --bs-btn-padding-x: 15px; --bs-btn-font-size: 12px;margin-right: 20px;font-family: sans-serif;background-color: #00CC99;padding-left: 20px;padding-right: 20px;margin-left: 16px;"><img src="./imagenes/cart-fill.svg" alt=""></a>   
+        </div>
+      </nav>
+      <!-- final de nav -->
+      <div class="container-fluid">
+        <h1>A continuacion te presentamos los Q&A mas comunes en nuestra página</h1>
+      <br>
+    <h4>¿En que paises estan disponibles sus ventas?</h4>
+    <p>Puedes ingresar al siguiente apartado para ver los paises en los cuales tenemos disponibles nuestros articulos</p>
+    <br>
+    <h4>¿Como puedo registrarme?</h4>
+    <p>En la barra principal hay un opcion en la que puedes registrarte y logearte a nuestra página</p>
+    <br>
+    <h4>¿Cómo puedo comprar en su tienda?</h4>
+    <p>Simplemente haz click en alguno de nuestro articulos y automaticamente te redirigira al carrito de compras</p>
+    <br>
+    <h4>¿Cómo puedo comprar en su tienda?</h4>
+    <p>Simplemente haz click en alguno de nuestro articulos y automaticamente te redirigira al carrito de compras</p>
+    <br>
+    <h4>¿Cómo puedo comprar en su tienda?</h4>
+    <p>Simplemente haz click en alguno de nuestro articulos y automaticamente te redirigira al carrito de compras</p>
+    <br>
+    <h4>¿Cómo puedo comprar en su tienda?</h4>
+    <p>Simplemente haz click en alguno de nuestro articulos y automaticamente te redirigira al carrito de compras</p>
+    <br>
+    <h4>¿Cómo puedo comprar en su tienda?</h4>
+    <p>Simplemente haz click en alguno de nuestro articulos y automaticamente te redirigira al carrito de compras</p>
+    <br>
+    <h4>¿Como puedo registrarme?</h4>
+    <p>En la barra principal hay un opcion en la que puedes registrarte y logearte a nuestra página</p>
+    <br>
+    <h4>¿Cómo puedo comprar en su tienda?</h4>
+    <p>Simplemente haz click en alguno de nuestro articulos y automaticamente te redirigira al carrito de compras</p>
+    <br>
+    
+  </div>
+     <!-- inicio del footer -->
+     <footer>
+        <div class="container-fluid" style="background-color: #AEB6BF;">
+          <div class="row">
+            <div class="col-4" style="margin-top: 20px;">
+              <h5>¿En qué te podemos ayudar?</h5>
+              <hr>
+              <ul class="ul-no-bullet">
+                <li>
+                  Informaciones
+                </li>
+                <li>
+                  preguntas frecuentes
+                </li>
+                <li>
+                  Referencias
+                </li>
+              </ul>
+            </div>
+            <div class="col-4"style="margin-top: 20px;">
+              <h5>Siguenos en nuestras redes sociales</h5>
+              <hr>
+              <ul class="ul-no-bullet">
+                <li>
+                  Facebook <a href="https://web.facebook.com/marketplace/106532542716776/search?query=pc%20gamer&vertical=C2C&_rdc=1&_rdr"><img src="./imagenes/facebook.svg" alt=""></a>
+                </li>
+                <li>
+                  X (Antes Twitter) <a href=""><img src="./static/img/imagenes/twitter-x.svg" alt=""></a>
+                </li>
+                <li>
+                  Instagram <a href=""><img src="./static/img/imagenes/instagram.svg" alt=""></a>
+                </li>
+                <li>
+                  Whatsapp <a href=""><img src="./static/img/imagenes/whatsapp.svg" alt=""></a>
+                </li>
+              </ul>
+            </div>
+            <div class="col-4"style="margin-top: 20px;">
+              <h5>¿En qué te podemos ayudar?</h5>
+              <hr>
+              <ul class="ul-no-bullet">
+                <li>
+                  Informaciones
+                </li>
+                <li>
+                  preguntas frecuentes
+                </li>
+                <li>
+                  Referencias
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- fin del footer -->
+      <script src="./static/js/js/bootstrap.bundle.min.js"></script>
+      <!-- javaScript code -->
+      <script src="./static/js/api.js"></script>
+      <script>
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+          return new bootstrap.Popover(popoverTriggerEl)
+        })
+      </script>
+</body>
+<!-- paises -->

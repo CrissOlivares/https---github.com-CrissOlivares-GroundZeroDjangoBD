@@ -1,0 +1,27 @@
+#countries {
+    display: grid;
+    /* definir el tamaño y el número de columnas en un contenedor de grid */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px;
+  }
+  
+  .pais {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  
+  .pais h2 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .pais p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+  }
+  

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarjetas</title>
+    <link href="./static/css/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Lista de Tarjetas</h1>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Nombre del Titular</th>
+                    <th>Número de Tarjeta</th>
+                    <th>Fecha de Vencimiento</th>
+                    <th>CVV</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for tarjeta in tarjetas %}
+                <tr>
+                    <td>{{ tarjeta.nombre_titular }}</td>
+                    <td>{{ tarjeta.numero_tarjeta }}</td>
+                    <td>{{ tarjeta.fecha_vencimiento }}</td>
+                    <td>{{ tarjeta.cvv }}</td>
+                    <td>
+                        <a href="{% url 'editar_tarjeta' tarjeta.id %}" class="btn btn-warning btn-sm">Editar</a>
+                        <a href="{% url 'eliminar_tarjeta' tarjeta.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <div class="mt-4">
+            <a href="GorundZeroCompra.html" class="btn btn-primary">Atras</a>
+          </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="./static/css/GroundZero.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GroundZero</title>
+    <link rel="stylesheet" href="./static/css/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/css/style.css">
+</head>
+<body style="background-color:#EEEDEC;">
+<!-- inicio register -->
+<div class="container">
+    <h2>Registro</h2>
+    <form id="registerForm" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div class="policy">
+          <input type="checkbox" id="terminosycondiciones" required>
+          <h3>Acepto los términos y condiciones</h3>
+      </div>
+      
+      <div class="input-box button">
+        <input type="button" value="Regístrate Ahora" onclick="window.location.href='{% url 'login' %}'">
+    </div>
+      <div class="text">
+          <h3>¿Ya tienes cuenta? <a href="{% url 'login' %}">Ingresa Aca</a></h3>
+      </div>
+  </form>
+  </div>
+  <!-- fin register -->
+  
+  <script src="./static/js/js/bootstrap.bundle.min.js"></script>
+
+  <!-- javaScript code Poppover-->
+  <script>
+    var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+    var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+      return new bootstrap.Popover(popoverTriggerEl)
+    })
+  </script>
+
+  <!-- Intento de Validación (No Refleja Datos en Consola (Error que desconozco (Santiago)))-->
+
+  <script>
+      // Agregar un event listener al formulario de registro para capturar el evento de envío
+      document.getElementById("registerForm").addEventListener("submit", function(event) {
+          // Log para verificar que el formulario de registro ha sido enviado
+          console.log("Formulario de registro enviado");
+  
+          // Obtener los valores de los campos del formulario
+          var name = document.getElementById("InputNombre").value;
+          var email = document.getElementById("InputCorreo").value;
+          var password = document.getElementById("Inputcontrasena").value;
+          var confirmPassword = document.getElementById("Inputconfirmacioncontrasena").value;
+          var termsCheckbox = document.getElementById("terminosycondiciones");
+  
+          // Log de los valores obtenidos del formulario
+          console.log("Nombre:", name);
+          console.log("Correo electrónico:", email);
+          console.log("Contraseña:", password);
+          console.log("Confirmar contraseña:", confirmPassword);
+          console.log("Términos y condiciones aceptados:", termsCheckbox.checked);
+  
+          // Validar que los campos obligatorios no estén vacíos
+          if (name === "" || email === "" || password === "" || confirmPassword === "") {
+              alert("Por favor, completa todos los campos.");
+              event.preventDefault(); // Prevenir el envío del formulario
+          } 
+          // Validar que la contraseña y la confirmación de contraseña coincidan
+          else if (password !== confirmPassword) {
+              alert("Las contraseñas no coinciden.");
+              event.preventDefault(); // Prevenir el envío del formulario
+          } 
+          // Validar que se hayan aceptado los términos y condiciones
+          else if (!termsCheckbox.checked) {
+              alert("Por favor, acepta los términos y condiciones.");
+              event.preventDefault(); // Prevenir el envío del formulario
+          } 
+          // Si todas las validaciones son exitosas, enviar el formulario
+          else {
+              alert("Formulario de registro enviado correctamente.");
+          }
+      });
+  </script>
+
+
+</body>
+</html>

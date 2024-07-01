@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Pago</title>
+    <link href="./static/css/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1 class="mt-5">Formulario de Pago</h1>
+        <form class="needs-validation" novalidate method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                {{ form.nombre_titular.label_tag }}
+                {{ form.nombre_titular }}
+                {% if form.nombre_titular.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.nombre_titular.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.numero_tarjeta.label_tag }}
+                {{ form.numero_tarjeta }}
+                {% if form.numero_tarjeta.errors %}
+                <div class="invalid-feedback">
+                    {% for error in form.numero_tarjeta.errors %}
+                        {{ error }}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    {{ form.fecha_vencimiento.label_tag }}
+                    {{ form.fecha_vencimiento }}
+                    {% if form.fecha_vencimiento.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.fecha_vencimiento.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+                <div class="form-group col-md-6">
+                    {{ form.cvv.label_tag }}
+                    {{ form.cvv }}
+                    {% if form.cvv.errors %}
+                    <div class="invalid-feedback">
+                        {% for error in form.cvv.errors %}
+                            {{ error }}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+    </div>
+    <script src="./static/js/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
